@@ -18,9 +18,10 @@ public class BurgerTest {
     @Mock
     Bun bun;
 
+    Burger burger = new Burger();
+
     @Test
     public void checkingAddIngredient() {
-        Burger burger = new Burger();
         burger.addIngredient(ingredient1);
         burger.addIngredient(ingredient2);
         int actual = burger.ingredients.size();
@@ -30,7 +31,6 @@ public class BurgerTest {
 
     @Test
     public void checkingRemoveIngredient() {
-        Burger burger = new Burger();
         burger.addIngredient(ingredient1);
         burger.addIngredient(ingredient2);
         burger.removeIngredient(0);
@@ -45,7 +45,6 @@ public class BurgerTest {
 
         Mockito.when(ingredient1.getPrice()).thenReturn(300F);
 
-        Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient1);
         float actual = burger.getPrice();
@@ -67,7 +66,6 @@ public class BurgerTest {
         Mockito.when(ingredient2.getName()).thenReturn("hot sauce");
         Mockito.when(ingredient2.getPrice()).thenReturn(100F);
 
-        Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient1);
         burger.addIngredient(ingredient2);
